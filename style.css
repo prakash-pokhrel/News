@@ -1,0 +1,208 @@
+﻿body
+{
+    color: black;
+    text-align: center;
+    font: 15px verdana, arial, sans-serif;
+    
+}
+
+h2
+{
+    color: maroon;
+    margin-bottom: 1px;
+}
+
+
+#wrapper
+{
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#header
+{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    background-color: #A6A6A6;
+    -webkit-border-radius: 15px 15px 0 0;
+   
+}
+
+
+
+#nav1
+{
+    height: 30px;
+    padding: 5px;
+    float: right;
+}
+#nav1 li
+{
+    height: 20px;
+    list-style: none;
+    display: inline;
+    text-align: center;
+    background: transparent;
+    float: left;
+}
+
+#category
+{
+    }
+
+#category li
+{
+ list-style: none;
+ display: inline;
+ text-align: center;
+ background: transparent;
+ padding: 5px;   
+}
+
+#nav li a
+{
+    -webkit-text-shadow: 1px 1px #000;
+    padding: 3px 5px 3px 5px;
+    background: transparent;
+    text-align: center;
+    color: white;
+    -webkit-text-shadow: 1px 1px #000;
+    text-decoration: none;
+}
+
+#nav li:hover
+{
+    background-color: maroon;
+    -webkit-border-radius: 7px 7px 7px 7px;
+}
+
+#welcome
+{
+    width: 250px;
+    float: left;
+    font-size: 16px;
+    margin-top: 0px;    
+    color: maroon;
+    background: transparent;
+}
+
+
+#welcome:hover
+{
+    cursor: pointer;
+}
+
+#welcome a
+{
+    text-decoration: none;
+    color: Maroon;
+}
+
+#body
+{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(ImageSlideshow/pattern.png);    
+    border: 1px solid gray;
+}
+
+#content
+{
+    margin-left: 10px;
+    color: black;
+    width: 66%;
+}
+
+#slideshow
+{
+    width: 700px;
+}
+
+#rightbar
+{
+    width: 30%;
+    height:812px;
+    float: right;
+    background-color: #B8B8B8;
+    color: black;
+    overflow:hidden;
+}
+
+.rbarcontent
+{
+    border-bottom:1px solid black;
+    height:82px;
+    overflow:hidden;
+    
+}
+
+#item
+{
+    padding: 10px;
+}
+#infobox
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 315px;
+    width: 872px;
+}
+.infobox1
+{
+    float: left;
+    width: 26%;
+    height: 248px;
+    margin-right: auto;
+    margin-left: 10px;
+    background-color: #939393;
+}
+
+.btn1
+{
+    padding: 5px 2px 7px 2px;
+    display: block;
+    -webkit-border-radius: 8px 5px 8px 5px;
+}
+
+.btn1:hover
+{
+    cursor: pointer;
+    background-color: maroon;
+}
+#footer
+{
+    padding: 10px 0px;
+    font-weight: bold;
+    margin-top: 30px;
+     width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+
+    height: 50px;
+    -webkit-border-radius: 25px 25px 0 0;
+    text-align: center;
+    color: #202501;
+}
+
+#footer a
+{
+    color: #202501;
+    text-decoration: none;
+    padding: 0px;
+}
+
+#footer a:hover
+{
+    text-decoration: underline;
+    color: #202501;
+}
+
+
+
+
+
+

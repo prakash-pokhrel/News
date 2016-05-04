@@ -1,0 +1,263 @@
+﻿<%@ Master Language="VB" CodeFile="Site.master.vb" AutoEventWireup="true" Inherits="Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Online News...!</title>
+   <link rel="stylesheet" href="style.css" type="text/css" charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <style type="text/css">
+        .style1 {width: 100%;}
+        
+        .style2 {width: 200px;}
+        
+        .style3 {width: 34px;}
+        
+        .MyLabel {text-decoration: none;}
+        
+        #category
+        {
+                  
+         }
+         
+    </style>
+
+   
+</head>
+<body>
+        <form id="form1" runat="server">
+    <div id="wrapper">
+       
+       <!----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <div id="header">
+
+            <div id="welcome">
+                <h2>
+                    <a href="News.aspx">ONLINE NEWS</a></h2>
+            </div>
+            <!--close welcome-->
+            <div id="nav1">
+                <ul id="nav">
+                    <!-- <li class="current"><a href="index.html">Home</a></li> -->
+                    <li><a href="News.aspx">Home</a></li>
+                    <li><a href="User.aspx">Reporter</a></li>
+                    <li><a href="Display.aspx">Display</a></li>
+                    <li><a href="Admin.aspx">Admin</a></li>
+                    <li><a href="Feedback.aspx">Contact</a></li>
+                  
+                </ul>
+            </div><br/><br/><br/><br/><br/>
+             <!--close nav1-->
+             <div id="category">   
+                <ul>
+                   <li> &nbsp;<asp:LinkButton 
+                        ID="linkbtn_latest" runat="server" 
+                        Text="LATEST" BackColor="Silver"
+                        BorderColor="Silver" BorderStyle="Ridge" BorderWidth="1px" ForeColor="Black"
+                        Height="20px" Width="77px" Font-Bold="True" 
+                        CssClass="MyLabel" Font-Size="X-Small" /></li>
+                
+                   <li> &nbsp;<asp:LinkButton ID="linkbtn_finance" runat="server" 
+                        Text="FINANCE" BackColor="Silver"
+                        BorderColor="Silver" BorderStyle="Ridge" BorderWidth="1px" ForeColor="Black"
+                        Height="20px" Width="100px" Font-Bold="True" 
+                        CssClass="MyLabel" Font-Size="X-Small"/></li>
+        
+                   <li> &nbsp;<asp:LinkButton ID="linkbtn_science" runat="server" 
+                        Text="SCIENCE" BackColor="Silver"
+                        BorderColor="Silver" BorderStyle="Ridge" BorderWidth="1px" ForeColor="Black"
+                        Height="20px" Width="75px" Font-Bold="True" 
+                        CssClass="MyLabel" Font-Size="X-Small" /></li>
+                
+                    <li>&nbsp;<asp:LinkButton ID="linkbtn_sports" runat="server" 
+                        Text="SPORTS" BackColor="Silver"
+                        BorderColor="Silver" BorderStyle="Ridge" BorderWidth="1px" ForeColor="Black"
+                        Height="20px" Width="76px" Font-Bold="True" 
+                        CssClass="MyLabel" Font-Size="X-Small"/></li>
+               
+                    <li>&nbsp;<asp:LinkButton ID="linkbtn_entertainment" 
+                        runat="server" Text="ENTERTAINMENT"
+                        BackColor="Silver" BorderColor="Silver" BorderStyle="Ridge" BorderWidth="1px"
+                        ForeColor="Black" Height="20px" Width="150px" Font-Bold="True" 
+                        CssClass="MyLabel" Font-Size="X-Small"/></li>
+           
+                    <li>&nbsp;<asp:LinkButton ID="linkbtn_others" runat="server" 
+                        Text="OTHERS" BackColor="Silver"
+                        BorderColor="Silver" BorderStyle="Ridge" BorderWidth="1px" ForeColor="Black"
+                        Height="20px" Width="88px" Font-Bold="True" 
+                        CssClass="MyLabel" Font-Size="X-Small" /></li>
+                    </ul>
+               </div>      
+  </div> <!--close header-->
+   <!----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+   <div id="body">
+             
+            <div id="rightbar">
+                <img src="ImageSlideshow/man_reading.jpg" width="80%" height="300px"  alt="News" /><br />
+                <asp:TextBox ID="txtID" runat="server" Visible="False"></asp:TextBox>
+                <h2>
+                    LATEST NEWS</h2>
+                
+                <%--
+					<div class="rbarcontent">
+					<h3><asp:Label ID="lbl_headlines1" runat="server" Text="HeadLines"></asp:Label></h3>              
+					<asp:Label ID="lbl_field1" runat="server" Text="Label"></asp:Label></div>
+					
+                    <div class="rbarcontent">
+					<h3><asp:Label ID="lbl_headlines2" runat="server" Text="HeadLines"></asp:Label></h3> 
+					<asp:Label ID="lbl_field2" runat="server" Text="Label"></asp:Label></div>
+					
+					 <div class="rbarcontent">
+					<h3><asp:Label ID="lbl_headlines3" runat="server" Text="HeadLines"></asp:Label></h3> 
+					<asp:Label ID="lbl_field3" runat="server" Text="Label"></asp:Label></div>
+					
+					<div class="rbarcontent">
+					<h3><asp:Label ID="lbl_headlines4" runat="server" Text="HeadLines"></asp:Label></h3>
+					<asp:Label ID="lbl_field4" runat="server" Text="Label"></asp:Label></div>--%>
+                
+
+                <asp:repeater ID="MyDataList1" runat="server" >
+                    <ItemTemplate>
+                        <div style="padding: 15,15,15,15; font-size: 10pt; font-family: Verdana; border-bottom: 1px Solid gray;
+                            width: 90%; height: 102px; overflow: hidden; margin-top:5px">
+                            <div id="Button12" style="font: 12pt verdana; color: Red">                                
+                               <asp:LinkButton ID="LinkButton1" runat="server" CommandArgument='<%#Eval("ID")%>'><b><%#DataBinder.Eval(Container.DataItem, "nheadlines")%> </b></asp:LinkButton>
+                            </div><br/>
+                          
+                            <%# DataBinder.Eval(Container.DataItem, "nreporter")%>/ <%# DataBinder.Eval(Container.DataItem, "nPlace")%>&nbsp;-&nbsp;
+                           <%#DataBinder.Eval(Container.DataItem, "newscontent")%>                                          
+                        </div>
+                    </ItemTemplate>
+                </asp:repeater>
+             
+         
+
+                </div>
+                <!--close rightbar-->
+
+            <div id="content">
+            <!-------------------------------------------------------Content from Child Page Starts Here----------------------------------------------------->
+                     <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server">
+                        <p>
+                          <br/>
+                                            
+                        </p>
+                     </asp:ContentPlaceHolder>
+            <!----------------------------------------------------Content from Child Page Ends Here------------------------------------------------------------>
+
+
+
+            <!--------------------------------------------------------Content from Master Page------------------------------------------------------------------------------>
+                     <h2>
+                         External Website</h2>
+                     <div class="infobox1">
+                         <div style="height: 243px">
+                             <b>
+                             <br />Weather:<br />&nbsp;</b><br/>Know the current Weather at various Places.<br/>
+                             <br/>
+                             <br/>
+                             <br/>
+                              <a href="http://www.wunderground.com/" target="_blank">
+                                Know More</a>
+                         </div>
+                     </div><!--close infobox1-->
+
+                     <div class="infobox1">
+                         <div>
+                             <b>
+                             <br />Read the News in English</b>
+                             <br/>
+                             <br/>
+                             <a href="http://www.bbc.com/" target="_blank"  style="text-decoration:none">BBC-World News</a><br/>
+                             <br/>
+                             <br/>
+                             <a href="http://www.telegraph.co.uk/" target="_blank" style="text-decoration:none">The Telegraph</a><br/>
+                             <br/>
+                             <br/>
+                             <a href="http://www.nytimes.com/" target="_blank" style="text-decoration:none">New York Times</a><br/>
+                         </div>
+                     </div><!--close infobox1-->
+
+                     <div class="infobox1">
+                         <div>
+                             <b>
+                             <br />Read the News In Nepali</b><br/>
+                             <br/>
+                             <a href="http://www.ekantipur.com/" target="_blank" style="text-decoration:none">Ekantipur</a><br/>
+                             <br/>
+                             <br/>
+                             <a href="http://www.nagariknews.com/index.php" target="_blank" style="text-decoration:none">Nagarik News</a><br/>
+                             <br/>
+                             <br/>
+                             <a href="http://ujyaaloonline.com/" target="_blank" style="text-decoration:none">Ujyalo Network</a>
+                         </div>
+                     </div><!--close infobox1-->
+            
+
+            
+                     <br/><br/>
+                     <table class="style1">
+                     <tr>       
+                           <td><br/><br/>
+                                 <b>Follow Us On:</b><br/><br/></td></tr>
+                         <tr>
+                             <td>
+                                 Facebook:</td>
+                             <td>
+                                 Twitter:</td>
+                             <td>
+                                 Google:</td>
+                             <td class="style2">
+                                 YouTube:</td>
+                             <td class="style3">
+                                 <br />
+                             </td>
+                         </tr>
+                         <tr>
+                             <td>
+                                 <asp:ImageButton ID="img_iconfb" runat="server" Height="60px" 
+                                     ImageUrl="~/ImageSlideshow/facebook-icon.jpg" Width="70px" 
+                                     PostBackUrl="https://www.facebook.com/p.pkhrl" />
+                             </td>
+                             <td>
+                                 <asp:ImageButton ID="img_icontwitter" runat="server" Height="60px" 
+                                     ImageUrl="~/ImageSlideshow/twittericon.png" Width="70px" 
+                                     PostBackUrl="https://twitter.com/eklo_ma" />
+                             </td>
+                             <td>
+                                 <asp:ImageButton ID="img_icongoogle" runat="server" Height="60px" 
+                                     ImageUrl="~/ImageSlideshow/Google.png" Width="70px" 
+                                     PostBackUrl="https://plus.google.com/u/0/118223746182543633611/posts" />
+                             </td>
+                             <td class="style2">
+                                 <asp:ImageButton ID="img_iconyoutube" runat="server" Height="60px" 
+                                     ImageUrl="~/ImageSlideshow/youtube.png" Width="70px" 
+                                     PostBackUrl="https://www.youtube.com/channel/UCcrg3ViR8tkOqSlnVS37r4Q" />
+                             </td>
+                             <td class="style3">
+                                 <asp:TextBox ID="txt_invsible" runat="server" Width="30px" Visible="False"></asp:TextBox>
+                             </td>
+                         </tr>
+                     </table><br/><br/>
+            </div><!--close content-->
+
+     </div><!--close body-->
+
+ <!----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+                         <div id="footer">
+                             <a href="News.aspx">Home</a> | <a href="User.aspx">User</a> | <a href="Admin.aspx">
+                              Admin</a> |<a href="Display.aspx">Display</a>|<a href="Feedback.aspx">Feedback</a>
+                             <br />
+                         
+                             CopyWright @<a href="http://www.cs.uef.fi/~prakasp" target="_blank"> Prakash</a>
+                         </div>   <!--close footer-->
+ <!----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+    </div><!--close wrapper-->
+
+   </form>
+
+</body>
+</html>
